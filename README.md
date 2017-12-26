@@ -5,3 +5,8 @@ This is my professional portfolio
 AWS
 ReactJS
 GitHub
+SSH
+HTML
+CSS
+Font Awesome
+Google Fonts
