@@ -1,0 +1,105 @@
+
+Install Cholatey- 
+https://chocolatey.org/install
+Run - Get-ExecutionPolicy
+Make sure it is remote signed if Remote signed run 
+iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+DONE
+if not Remote signed run 
+Set-ExecutionPolicy AllSigned or Set-ExecutionPolicy Bypass -Scope Process
+Then Run - 
+Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+
+confirm Choclatey is installed by running 
+choco -?
+
+Install GIT
+choco install git -y
+
+Install openssh to connect to github securely
+choco install openssh -y -params "/SSHAgentFeature"
+
+Install javascript packages
+choco install nodejs npm -y
+
+Install Atom
+choco install atom -y
+
+
+Install python 2.7
+choco install python2 -y
+
+
+Install AWS CLI
+choco install awscli -y
+
+Install utilitits unzip and Less to view files from command line
+choco install unzip Less -y
+
+Install boto3
+pip install boto3
+
+Install ipython (if error about installing visual studio just follow the instuctions)
+pip install ipython
+
+
+Configure Git- 
+git config --global user.name "Dex" 
+git config --global user.email dexta007@gmail.com
+
+Make Local Git Directory and then clone repo to new directory
+git clone https://github.com/dexta007/my-portfolio.git
+
+Make first Commit-
+cd my-portfolio
+atom README.md
+File Content: remove defaut
+# Dex's portfolio
+
+This is my professional portfolio. It uses AWS and ReactJS. 
+
+-Save the file
+
+Back in command type: git status 
+should see that readme.mb is modified.
+Add file-
+git add README.md
+Commit File-
+git commit -m "First commit - fix README title and description"
+Push file to github
+git push
+
+Fix username and pw prompt for github using ssh
+ssh-keygen -C dexta007@gmail.com
+enter PW
+ls ~/.ssh
+cat ~/.ssh/id_rsa.pub
+Paste that into github ssh key
+
+Add ssh key locally
+ssh-add
+enter password
+
+open Atom README.md file add following section 
+
+## Technologies Used
+
+Git and github
+SSH
+
+Save file
+Navigate back to my-portfolio directory
+git status
+Shows readme.md file is modified
+git add README.md
+git commit -m "Updating readme with tech used" 
+git push
+should not get prompt for user name and pw
+
+
+
+
+
+
+
+
